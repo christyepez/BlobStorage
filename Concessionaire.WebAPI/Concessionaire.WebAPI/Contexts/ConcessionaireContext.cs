@@ -15,6 +15,7 @@ namespace Concessionaire.WebAPI.Contexts
         }
 
         public virtual DbSet<Car> Cars { get; set; } = null!;
+        public virtual DbSet<Blob> Blobs { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -44,6 +45,22 @@ namespace Concessionaire.WebAPI.Contexts
                 entity.Property(e => e.TechnicalDataSheetPath)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.ImageGuid)
+                   .HasMaxLength(200)
+                   .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Blob>(entity =>
+            {
+
+                entity.Property(e => e.ImagePath)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ImageGuid)
+                   .HasMaxLength(200)
+                   .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);
