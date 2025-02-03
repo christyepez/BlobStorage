@@ -1,4 +1,4 @@
-﻿namespace Concessionaire.WebAPI.Enums
+﻿namespace BlobStorage.WebAPI.Enums
 {
     public enum ContainerEnum
     {

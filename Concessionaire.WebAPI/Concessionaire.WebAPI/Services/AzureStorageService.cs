@@ -1,10 +1,10 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using Concessionaire.WebAPI.Enums;
-using Concessionaire.WebAPI.Requests;
+using BlobStorage.WebAPI.Enums;
+using BlobStorage.WebAPI.Requests;
  
 
-namespace Concessionaire.WebAPI.Services
+namespace BlobStorage.WebAPI.Services
 {
     public class AzureStorageService : IAzureStorageService
     {

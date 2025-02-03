@@ -1,6 +1,6 @@
-using Concessionaire.WebAPI.Contexts;
-using Concessionaire.WebAPI.Repositories;
-using Concessionaire.WebAPI.Services;
+using BlobStorage.WebAPI.Contexts;
+using BlobStorage.WebAPI.Repositories;
+using BlobStorage.WebAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ConcessionaireContext>(x => x.UseSqlServer(connectionString));
-builder.Services.AddScoped<ICarsRepository, CarsRepository>();
+builder.Services.AddDbContext<BlobStorageContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddScoped<IBlobsRepository, CarsRepository>();
 builder.Services.AddScoped<IAzureStorageService, AzureStorageService>();
 
 builder.Services.AddControllers();
@@ -17,7 +17,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.AddCors();
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors();
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//                      policy =>
+//                      {
+//                          policy
+//                            .WithOrigins(builder.Configuration["Host"])
+//                             .AllowAnyHeader()
+//                            .AllowAnyMethod(); ;
+
+//                      });
+
+
+//});
 
 var app = builder.Build();
 

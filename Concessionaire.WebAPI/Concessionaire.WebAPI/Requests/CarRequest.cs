@@ -1,8 +1,8 @@
-﻿using Concessionaire.WebAPI.Enums;
-using Concessionaire.WebAPI.ValidationAttributes;
+﻿using BlobStorage.WebAPI.Enums;
+using BlobStorage.WebAPI.ValidationAttributes;
 using System.ComponentModel.DataAnnotations;
 
-namespace Concessionaire.WebAPI.Requests
+namespace BlobStorage.WebAPI.Requests
 {
     public class CarRequest
     {

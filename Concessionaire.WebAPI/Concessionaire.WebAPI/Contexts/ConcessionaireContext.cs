@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Concessionaire.WebAPI.Entities;
+using BlobStorage.WebAPI.Entities;
 
-namespace Concessionaire.WebAPI.Contexts
+namespace BlobStorage.WebAPI.Contexts
 {
-    public partial class ConcessionaireContext : DbContext
+    public partial class BlobStorageContext : DbContext
     {
-        public ConcessionaireContext()
+        public BlobStorageContext()
         {
         }
 
-        public ConcessionaireContext(DbContextOptions<ConcessionaireContext> options)
+        public BlobStorageContext(DbContextOptions<BlobStorageContext> options)
             : base(options)
         {
         }
@@ -22,7 +22,7 @@ namespace Concessionaire.WebAPI.Contexts
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=Concessionaire;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=DB_Leame_Advance;Trusted_Connection=True;");
             }
         }
 

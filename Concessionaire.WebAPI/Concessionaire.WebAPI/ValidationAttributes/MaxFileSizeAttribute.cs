@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Concessionaire.WebAPI.ValidationAttributes
+namespace BlobStorage.WebAPI.ValidationAttributes
 {
     public class MaxFileSizeAttribute : ValidationAttribute
     {

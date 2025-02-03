@@ -1,4 +1,4 @@
-﻿namespace Concessionaire.WebAPI.Entities
+﻿namespace BlobStorage.WebAPI.Entities
 {
     public partial class Car
     {
@@ -12,7 +12,7 @@
 
         public string TechnicalDataSheetPath { get; set; }
 
-        // Propiedad para el GUID de la hoja técnica cargada (opcional si también quieres guardar el GUID)
+        // Propiedad para el GUID de la hoja técnica blobgada (opcional si también quieres guardar el GUID)
         public string TechnicalDataSheetGuid { get; set; }
     }
 
